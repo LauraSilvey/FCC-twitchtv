@@ -1,7 +1,35 @@
-
-
-img {
-	border-radius: 50px;
+body {
+	background-color: #3F7CAC;
 }
 
+
+
+h1 {
+	color: #FAF3DD;
+	padding-top: 35px;
+	padding-bottom: 30px;
+}
+
+p {
+	padding-top: 25px;
+
+}
+
+
+.well {
+	max-width: 800px;
+	border-radius: 0px;
+	margin-bottom: 0px;
+	
+
+	
+}
+
+.onlineResults {
+	background-color: #B9F18C;
+}
+
+.img-small {
+ 	width:  100px;
+}
 

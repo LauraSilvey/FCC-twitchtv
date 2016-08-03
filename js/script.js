@@ -1,7 +1,5 @@
 var users = ["cretetion", "ESL_SC2", "freecodecamp", "habathcx", "noobs2ninjas", "OgamingSC2", "RobotCaleb"];
 
-var status = "";
-
 function newBox(id, newClass){
   var newP = document.createElement("p");
   var newHeader = document.createElement("h3");
@@ -14,7 +12,7 @@ function newBox(id, newClass){
   $(newDiv).append(rowDiv);
   $(rowDiv).addClass("row");
   $(rowDiv).append(newImg, newHeader, newP);
-  $(newImg).addClass(newClass + "logo col-sm-3");
+  $(newImg).addClass(newClass + "logo col-sm-3 img-circle img-small");
   $(newHeader).addClass(newClass + " col-sm-3");
   $(newP).addClass(newClass + "details col-sm-6 text-right");
 };
@@ -26,25 +24,21 @@ function allUsers(){
     $.getJSON(url, function(data){
       if(data.stream === Object(data.stream)){
         newBox("#onlineResults", user);
+        $(".well").addClass("onlineResults");
         $("." + user + "logo").attr("src", data.stream.channel.logo);
-        $("."+ user).html(user);
-        $("." + user + "details").html(data.stream.game);
+        $("." + user).html(user);
+        $("." + user + "details").html(data.stream.channel.status);
       }else{
         $.getJSON(data._links.channel, function(data){
           newBox("#offlineResults", user);
           $("." + user + "logo").attr("src", data.logo);
-          $("."+ user).html(user);
+          $("." + user).html(user);
           $("." + user + "details").html("offline");
         });
       }
     });
   });  
 };
-
-
-
-
-
 
 
 $(document).ready(function() {
