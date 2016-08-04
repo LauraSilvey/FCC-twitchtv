@@ -19,17 +19,22 @@ p {
 .well {
 	max-width: 800px;
 	border-radius: 0px;
-	margin-bottom: 0px;
-	
-
-	
+	margin-bottom: 0px;	
 }
 
-.onlineResults {
+.online-results {
 	background-color: #B9F18C;
 }
 
 .img-small {
  	width:  100px;
+}
+
+#offlineResults div {
+	background-color: white;
+}
+
+#accountClosed div {
+	background-color: white;
 }
 
